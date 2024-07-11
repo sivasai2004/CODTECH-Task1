@@ -1,0 +1,57 @@
+/* SIMPLE CALCULATOR BY TAKING TWO INTEGER AS DYNAMICALLY */
+
+
+
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y == 0:
+        return "Error! Division by zero."
+    else:
+        return x / y
+
+def calculator():
+    print("Welcome to the basic calculator!")
+    
+    # Get the numbers from the user
+    try:
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
+    except ValueError:
+        print("Invalid input! Please enter numerical values.")
+        return
+    
+    # Get the operation from the user
+    print("Select an operation:")
+    print("1. Addition (+)")
+    print("2. Subtraction (-)")
+    print("3. Multiplication (*)")
+    print("4. Division (/)")
+    
+    operation = input("Enter the number corresponding to the operation: ")
+    
+    # Perform the selected operation
+    if operation == '1' or operation == '+':
+        result = add(num1, num2)
+    elif operation == '2' or operation == '-':
+        result = subtract(num1, num2)
+    elif operation == '3' or operation == '*':
+        result = multiply(num1, num2)
+    elif operation == '4' or operation == '/':
+        result = divide(num1, num2)
+    else:
+        print("Invalid operation selected!")
+        return
+    
+    # Display the result
+    print(f"The result is: {result}")
+
+# Run the calculator
+calculator()
